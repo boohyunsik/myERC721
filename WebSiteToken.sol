@@ -16,6 +16,7 @@ contract WebSiteToken is MyERC721 {
     }
     
     function mint(address to, string memory uri) public {
+        require(uriMap[uri] == 0);
         uint256 newTokenId = totalSupply() + 1;
         _mint(to, newTokenId);
         
